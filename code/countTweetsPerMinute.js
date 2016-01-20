@@ -18,7 +18,7 @@ tweets.map ( function ( tweet ) {
 	});
 });
 
-output.sort ( ); //optional
+output.sort ( function ( a, b) { return a.time - b.time; } ); //optional
 
 fs.writeFileSync ( '../result/result.json', JSON.stringify ( output, null, '\t' ), 'UTF-8' );
 
