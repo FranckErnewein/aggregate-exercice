@@ -5,7 +5,7 @@ var output = [];
 tweets = JSON.parse ( fs.readFileSync ( '../sample/tweets.json','UTF-8' ) );
 
 tweets.map ( function ( tweet ) {
-	minute_timestamp = parseInt ( tweet.timestamp_ms / 60000 ) * 60000;
+	var minute_timestamp = parseInt ( tweet.timestamp_ms / 60000 ) * 60000;
 	for ( var i = 0; i < output.length; i++) {
 		if (output[i].time === minute_timestamp) {
 			output[i].count++;
